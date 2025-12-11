@@ -37,7 +37,7 @@ graph TD
 
 -----
 
-## 📂 Estructura del Proyecto
+## Estructura del Proyecto
 
 La estructura está diseñada para separar el "Shell" de los "Módulos".
 
@@ -64,7 +64,7 @@ src/
 
 -----
 
-## 🛠 Características Técnicas Clave
+## Características Técnicas Clave
 
 ### 1\. Enrutamiento y Lazy Loading
 
@@ -112,7 +112,7 @@ El portal soporta múltiples layouts según la ruta:
 
 -----
 
-## 🚀 Instalación y Ejecución
+## Instalación y Ejecución
 
 ### Prerrequisitos
 
@@ -146,7 +146,7 @@ El portal soporta múltiples layouts según la ruta:
 
 -----
 
-## 🎨 Guía de Estilos (Theming)
+## Guía de Estilos (Theming)
 
 El portal utiliza **CSS Variables** o **Tailwind** para definir el tema global que heredarán los módulos.
 
@@ -166,7 +166,7 @@ Si desarrollas un nuevo módulo, **NO** hardcodes colores hexadecimales. Usa las
 
 -----
 
-## 📦 Build y Despliegue
+## Build y Despliegue
 
 Para producción, el portal se compila en archivos estáticos optimizados.
 
@@ -189,15 +189,3 @@ COPY nginx.conf /etc/nginx/conf.d/default.conf
 EXPOSE 80
 ```
 
------
-
-## 🤝 Contribución
-
-1.  Las vistas principales deben agregarse en `src/views` solo si no pertenecen a un módulo de negocio específico.
-2.  Si necesitas agregar un ítem al menú lateral, edita `src/config/navigation.js`.
-3.  Respeta las reglas de ESLint configuradas.
-
-<!-- end list -->
-
-```
-```

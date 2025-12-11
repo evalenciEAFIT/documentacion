@@ -1,51 +1,52 @@
-# [Nombre del Proyecto]
+# Sistema Integrado de Gestión [Nombre del Proyecto]
 
-> [Breve descripción de una línea sobre qué hace el proyecto y su propuesta de valor principal.]
+> **Plataforma de Orquestación y Visualización de Datos.**
+> Este proyecto unifica y extiende las capacidades de 7 subsistemas: Portal, Geoportal, Bróker, Administración, Repositorio, Dashboards y Estudios.
 
-![Estado del Build](https://img.shields.io/badge/build-passing-brightgreen)
-![Versión](https://img.shields.io/badge/version-1.0.0-blue)
-![Licencia](https://img.shields.io/badge/license-MIT-green)
+![Version](https://img.shields.io/badge/version-2.0.0--beta-blue)
+![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
+![Tech Stack](https://img.shields.io/badge/stack-Node%20%7C%20Python%20%7C%20React-orange)
 
-## Tabla de Contenidos
-1. [Descripción General](#descripción-general)
-2. [Stack Tecnológico](#stack-tecnológico)
-3. [Prerrequisitos](#prerrequisitos)
-4. [Instalación y Configuración](#instalación-y-configuración)
-5. [Estructura del Proyecto](#estructura-del-proyecto)
-6. [Variables de Entorno](#variables-de-entorno)
-7. [Scripts Disponibles](#scripts-disponibles)
-8. [API / Endpoints](#api--endpoints)
-9. [Contribuir](#contribuir)
+## 📋 Tabla de Contenidos
+
+1. [Arquitectura del Sistema](#-arquitectura-del-sistema)
+2. [Descripción de Módulos](#-descripción-de-módulos)
+3. [Instalación y Despliegue](#-instalación-y-despliegue)
+4. [Configuración de Entorno (.env)](#-configuración-de-entorno)
+5. [Guía de Integración por Módulo](#-guía-de-integración-por-módulo)
+    * [Administración (Auth)](#1-administración-auth--roles)
+    * [Bróker (IoT)](#2-bróker-iot--mensajería)
+    * [Geoportal & Mapas](#3-geoportal--capas-espaciales)
+    * [Estudios & Repositorio](#4-estudios--repositorio)
+    * [Dashboards & Visualización](#5-dashboards--portal)
+6. [Flujo de Trabajo (Git)](#-flujo-de-trabajo)
 
 ---
 
-## Descripción General
-[Descripción detallada del proyecto. Explica el problema que resuelve, quién es el usuario objetivo y las funcionalidades principales. Si tienes un diagrama de arquitectura, inclúyelo aquí.]
+## 🧩 Arquitectura del Sistema
 
-## Stack Tecnológico
-**Frontend:**
-* [React / Vue / Angular]
-* [Tailwind / Material UI / Sass]
-* [Redux / Context API]
+El sistema funciona como un **Middleware de Integración** y **Frontend Unificado**. No almacena toda la data, sino que orquesta el flujo entre los servicios especializados.
 
-**Backend:**
-* [Node.js / Python / Go]
-* [Express / Django / Laravel]
-* [PostgreSQL / MongoDB]
+```mermaid
+graph TD
+    User((Usuario)) --> Portal[Frontend / Portal Web]
+    
+    subgraph "Core Services"
+        Portal --> API[API Gateway / Backend]
+        API --> Admin[Módulo Administración]
+        API --> Repo[Módulo Repositorio]
+    end
 
-**Infraestructura:**
-* [Docker]
-* [AWS / Azure / Vercel]
+    subgraph "Data & Analytics"
+        Broker[Módulo Bróker IoT] -- MQTT/WS --> API
+        API --> Dash[Módulo Dashboards]
+        Estudios[Módulo Estudios] --> API
+    end
 
-## Prerrequisitos
-Antes de iniciar, asegúrate de tener instalado:
-* [Node.js v18.x]
-* [Python 3.10+]
-* [Docker Desktop]
+    subgraph "Geospatial"
+        API --> Geo[Módulo Geoportal]
+        Geo --> MapServer[GeoServer / MapStore]
+    end
 
-## Instalación y Configuración
-
-1. **Clonar el repositorio:**
-   ```bash
-   git clone [https://github.com/usuario/proyecto.git](https://github.com/usuario/proyecto.git)
-   cd proyecto
+    Repo -.-> Estudios
+    Broker -.-> Dash

@@ -7,7 +7,7 @@
 ![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
 ![Tech Stack](https://img.shields.io/badge/stack-Node%20%7C%20Python%20%7C%20React-orange)
 
-## 📋 Tabla de Contenidos
+## Tabla de Contenidos
 
 1. [Arquitectura del Sistema](#-arquitectura-del-sistema)
 2. [Descripción de Módulos](https://github.com/evalenciEAFIT/documentacion/blob/main/grupos/portal/readme.md)
@@ -23,7 +23,7 @@
 
 ---
 
-## 🧩 Arquitectura del Sistema
+## Arquitectura del Sistema
 
 El sistema funciona como un **Middleware de Integración** y **Frontend Unificado**. No almacena toda la data, sino que orquesta el flujo entre los servicios especializados.
 

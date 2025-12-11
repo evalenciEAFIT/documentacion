@@ -1,13 +1,4 @@
-Este es el archivo `README.md` específico para el proyecto **"Portal Web"**.
-
-Dado que este proyecto actúa como el **"Shell"** o contenedor principal que integra a los demás (Geoportal, Dashboards, etc.), la documentación se centra en la **Estructura del Layout**, el **Enrutamiento Central** y la **Gestión de Sesión**.
-
-Puedes guardar esto como `PORTAL_README.md` o el `README.md` dentro de la carpeta `/src/portal` o el repositorio específico del frontend.
-
------
-
-````markdown
-# 🖥️ Portal Web (Main Shell)
+# Portal Web (Main Shell)
 
 > **Interfaz Unificada de Acceso.**
 > Este proyecto es la aplicación principal (Single Page Application) que actúa como contenedor para los módulos de negocio (Geoportal, Dashboards, Estudios, etc.). Gestiona la autenticación, la navegación global y el layout base.
@@ -16,7 +7,7 @@ Puedes guardar esto como `PORTAL_README.md` o el `README.md` dentro de la carpet
 ![Framework](https://img.shields.io/badge/framework-React%20%7C%20Vite-blue)
 ![Auth](https://img.shields.io/badge/auth-OAuth2%20%2F%20OIDC-orange)
 
-## 📖 Visión General
+## Visión General
 
 El **Portal Web** no contiene lógica de negocio pesada. Su responsabilidad es:
 1.  **Autenticar** al usuario.

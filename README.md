@@ -10,7 +10,7 @@
 ## 📋 Tabla de Contenidos
 
 1. [Arquitectura del Sistema](#-arquitectura-del-sistema)
-2. [Descripción de Módulos] (https://github.com/evalenciEAFIT/documentacion/blob/main/grupos/portal/readme.md)
+2. [Descripción de Módulos](https://github.com/evalenciEAFIT/documentacion/blob/main/grupos/portal/readme.md)
 3. [Instalación y Despliegue](#-instalación-y-despliegue)
 4. [Configuración de Entorno (.env)](#-configuración-de-entorno)
 5. [Guía de Integración por Módulo](#-guía-de-integración-por-módulo)
